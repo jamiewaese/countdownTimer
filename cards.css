@@ -1,0 +1,304 @@
+.label {
+  font-family: 'Figtree', sans-serif;
+}
+
+.countdown-timer { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  transform: scale(.75);
+}
+
+.countdown-timer-section {
+  width:min-content;
+}
+.two-cards {
+  display: flex;
+  flex-direction: row;
+}
+.cardContainer {
+  transition: all 0.5s ease-out;
+  transform-style: preserve-3d;
+}
+.card-1 {
+  right: 7rem;
+  top:2rem;
+  transition: all 0.25s ease-out;
+  perspective: 500px;
+}
+.card-2 {
+  left:0rem;
+  transition: all 0.25s ease-out;
+}
+.card-3 {
+  top:-2rem;
+  left:7rem;
+  transition: all 0.25s ease-out;
+}
+.hidden {
+  visibility: hidden;
+}
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  font-size: 1.5rem;
+}
+
+
+
+
+/* based on: http://sean.brunnock.com/SVG/suits.html */
+  /* converted from SCSS to CSS and minor style tweaks */
+
+  .card {
+    --width: 10em;
+    --height: calc(1.4 * var(--width));
+    --padding: 1em;
+    width: var(--width);
+    height: var(--height);
+    padding: var(--padding);
+    background-color: white;
+    border-radius: 0.5em;
+    box-shadow: 0.2em 0.2em 1.2em rgba(0, 0, 0, 0.1);
+    position: relative;
+    color: var(--color);
+    cursor: pointer;
+  }
+  .card:hover {
+    transform: scale(1.25);
+    z-index: 10;
+    box-shadow: 0.2em 0.2em 1.2em rgba(0, 0, 0, 0.3);
+  }
+  .card::before,
+  .card::after {
+    flex: 1 auto;
+    display: block;
+    content: var(--card);
+    padding: 0 0.1em;
+    font-weight: 500;
+    font-size: 1.8em;
+    letter-spacing: -0.15em;
+    width: 100%;
+  }
+  .card::before {
+    height: 100%;
+  }
+  .card::after {
+    --translateX: 0.1em;
+    position: absolute;
+    bottom: calc(var(--padding) / 2);
+    width: calc(100% - var(--padding));
+    height: 50%;
+    transform: rotate(180deg) translateX(var(--translateX));
+  }
+  .card[suit="heart"] {
+    --imageSuit: url("heart.svg");
+    --color: red;
+    --cardBack: url("cardBack-red.svg");
+  }
+  .card[suit="diamond"] {
+    --imageSuit: url("diamond.svg");
+    --color: red;
+    --cardBack: url("cardBack-red.svg");
+  }
+  .card[suit="spade"] {
+    --imageSuit: url("spade.svg");
+    --color: #000;
+    --cardBack: url("cardBack-red.svg");
+  }
+  .card[suit="club"] {
+    --imageSuit: url("club.svg");
+    --color: #000;
+    --cardBack: url("cardBack-red.svg");
+  }
+  .card[card="A"] {
+    --card: "A";
+  }
+  .card[card="A"]::before {
+    background-image: var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 1.5em;
+    background-repeat: no-repeat;
+    background-position: left 0.1em top 1.1em, center 2.9em;
+  }
+  .card[card="A"]::after {
+    background-image: var(--imageSuit);
+    background-size: 0.6em;
+    background-repeat: no-repeat;
+    background-position: left 0.1em top 1.1em;
+  }
+  .card[card="2"] {
+    --card: "2";
+  }
+  .card[card="2"]::before,
+  .card[card="2"]::after {
+    background-image: var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, center 0.5em;
+  }
+  .card[card="3"] {
+    --card: "3";
+  }
+  .card[card="3"]::before {
+    background-image: var(--imageSuit), var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 1em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, center 0.5em, center 3.3em;
+  }
+  .card[card="3"]::after {
+    background-image: var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, center 0.5em;
+  }
+  .card[card="4"] {
+    --card: "4";
+  }
+  .card[card="4"]::before,
+  .card[card="4"]::after {
+    background-image: var(--imageSuit), var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 1em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, top 0.5em left 0.9em, top 0.5em right 0.9em;
+  }
+  .card[card="5"] {
+    --card: "5";
+  }
+  .card[card="5"]::before {
+    background-image: var(--imageSuit), var(--imageSuit), var(--imageSuit),
+      var(--imageSuit);
+    background-size: 0.6em, 1em, 1em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, top 0.5em left 0.9em, top 0.5em right 0.9em,
+      center 3.2em;
+  }
+  .card[card="5"]::after {
+    background-image: var(--imageSuit), var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 1em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, top 0.5em left 0.9em, top 0.5em right 0.9em;
+  }
+  .card[card="6"] {
+    --card: "6";
+  }
+  .card[card="6"]::before {
+    background-image: var(--imageSuit), var(--imageSuit), var(--imageSuit),
+      var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 1em, 1em, 1em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, top 0.5em left 0.9em, top 0.5em right 0.9em,
+      top 3.2em left 0.9em, top 3.2em right 0.9em;
+  }
+  .card[card="6"]::after {
+    background-image: var(--imageSuit), var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 1em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, top 0.5em left 0.9em, top 0.5em right 0.9em;
+  }
+  .card[card="7"] {
+    --card: "7";
+  }
+  .card[card="7"]::before {
+    background-image: var(--imageSuit), var(--imageSuit), var(--imageSuit),
+      var(--imageSuit), var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 1em, 1em, 1em, 1em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, top 0.5em left 0.9em, top 0.5em right 0.9em,
+      top 3.2em left 0.9em, top 3.2em right 0.9em, top 1.8em center;
+  }
+  .card[card="7"]::after {
+    background-image: var(--imageSuit), var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 1em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, top 0.5em left 0.9em, top 0.5em right 0.9em;
+  }
+  .card[card="8"] {
+    --card: "8";
+  }
+  .card[card="8"]::before {
+    background-image: var(--imageSuit), var(--imageSuit), var(--imageSuit),
+      var(--imageSuit), var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 1em, 1em, 1em, 1em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, top 0.5em left 0.9em, top 0.5em right 0.9em,
+      top 3.2em left 0.9em, top 3.2em right 0.9em, top 1.6em center;
+  }
+  .card[card="8"]::after {
+    background-image: var(--imageSuit), var(--imageSuit), var(--imageSuit),
+      var(--imageSuit);
+    background-size: 0.6em, 1em, 1em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, top 0.5em left 0.9em, top 0.5em right 0.9em,
+      top 2em center;
+  }
+  .card[card="9"] {
+    --card: "9";
+  }
+  .card[card="9"]::before {
+    background-image: var(--imageSuit), var(--imageSuit), var(--imageSuit),
+      var(--imageSuit), var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 1em, 1em, 1em, 1em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, top 0.5em left 0.9em, top 0.5em right 0.9em,
+      top 2.1em left 0.85em, top 2.1em right 0.9em, top 3.2em center;
+  }
+  .card[card="9"]::after {
+    background-image: var(--imageSuit), var(--imageSuit), var(--imageSuit),
+      var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 1em, 1em, 1em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, top 0.5em left 0.9em, top 0.5em right 0.9em,
+      top 2.1em left 0.85em, top 2.1em right 0.9em;
+  }
+  .card[card="10"] {
+      --card: "";
+      background-image: var(--cardBack);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  
+
+   /*
+  .card[card="10"]::before,
+  .card[card="10"]::after {
+    text-indent: -0.2em;
+    background-image: var(--imageSuit), var(--imageSuit), var(--imageSuit),
+      var(--imageSuit), var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 1em, 1em, 1em, 1em, 1em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em, top 0.5em left 0.9em, top 0.5em right 0.9em,
+      top 2.1em left 0.85em, top 2.1em right 0.9em, top 1.2em center;
+  }
+  */
+  .card[card="J"] {
+    --card: "J";
+  }
+  .card[card="Q"] {
+    --card: "Q";
+  }
+  .card[card="K"] {
+    --card: "K";
+  }
+  .card[card="J"]::before,
+  .card[card="Q"]::before,
+  .card[card="K"]::before {
+    background-image: var(--imageSuit), var(--imageSuit);
+    background-size: 0.6em, 5em;
+    background-repeat: no-repeat;
+    background-position: left 0.1em top 1.1em, center 1.5em;
+  }
+  .card[card="J"]::after,
+  .card[card="Q"]::after,
+  .card[card="K"]::after {
+    background-image: var(--imageSuit);
+    background-size: 0.6em;
+    background-repeat: no-repeat;
+    background-position: left 1.1em;
+  }
+  .card[card="Q"],
+  .card[card="K"] {
+    text-indent: -0.2em;
+  }
